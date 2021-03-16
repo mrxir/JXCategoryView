@@ -45,7 +45,6 @@
 @end
 
 @interface JXCategoryListContainerView () <UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, weak) id<JXCategoryListContainerViewDelegate> delegate;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, strong) NSMutableDictionary <NSNumber *, id<JXCategoryListContentViewDelegate>> *validListDict;
@@ -56,6 +55,13 @@
 @end
 
 @implementation JXCategoryListContainerView
+
+- (void)setDelegate:(id<JXCategoryListContainerViewDelegate>)delegate
+{
+    _delegate = delegate;
+    
+    [self initializeViews];
+}
 
 - (instancetype)initWithType:(JXCategoryListContainerType)type delegate:(id<JXCategoryListContainerViewDelegate>)delegate{
     self = [super initWithFrame:CGRectZero];
