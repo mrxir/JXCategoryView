@@ -110,9 +110,10 @@ typedef NS_ENUM(NSUInteger, JXCategoryListContainerType) {
 @property (nonatomic, assign) CGFloat initListPercent;
 @property (nonatomic, assign) BOOL bounces; //默认NO
 
+- (instancetype)init;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder;
 - (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
-- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
-- (instancetype)initWithType:(JXCategoryListContainerType)type delegate:(id<JXCategoryListContainerViewDelegate>)delegate NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithType:(JXCategoryListContainerType)type delegate:(id<JXCategoryListContainerViewDelegate>)delegate;
 
 @end
 

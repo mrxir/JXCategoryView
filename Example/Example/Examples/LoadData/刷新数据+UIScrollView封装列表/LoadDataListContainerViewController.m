@@ -21,7 +21,10 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
 
-    self.listContainerView = [[JXCategoryListContainerView alloc] initWithType:JXCategoryListContainerType_ScrollView delegate:self];
+//    self.listContainerView = [[JXCategoryListContainerView alloc] initWithType:JXCategoryListContainerType_ScrollView delegate:self];
+    self.listContainerView = [[JXCategoryListContainerView alloc] init];
+    self.listContainerView.containerType = JXCategoryListContainerType_ScrollView;
+    self.listContainerView.delegate = self;
 //    self.listContainerView.initListPercent = 0.5;
     [self.view addSubview:self.listContainerView];
 

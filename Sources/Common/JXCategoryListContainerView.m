@@ -63,6 +63,30 @@
     [self initializeViews];
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _validListDict = [NSMutableDictionary dictionary];
+        _willAppearIndex = -1;
+        _willDisappearIndex = -1;
+        _initListPercent = 0.01;
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        _validListDict = [NSMutableDictionary dictionary];
+        _willAppearIndex = -1;
+        _willDisappearIndex = -1;
+        _initListPercent = 0.01;
+    }
+    return self;
+}
+
 - (instancetype)initWithType:(JXCategoryListContainerType)type delegate:(id<JXCategoryListContainerViewDelegate>)delegate{
     self = [super initWithFrame:CGRectZero];
     if (self) {
